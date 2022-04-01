@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "airent-app",
+    "slug": "airent-app",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
