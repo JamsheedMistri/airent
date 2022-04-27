@@ -47,3 +47,5 @@ target 'airentapp' do
   end
 
 end
+
+pod 'BEMCheckBox'

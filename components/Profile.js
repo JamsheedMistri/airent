@@ -1,68 +1,68 @@
-import React, { useState, useContext } from 'react';
-import { GlobalContext } from '../context/GlobalContext';
-import { createStackNavigator } from '@react-navigation/stack';
-import { StyleSheet } from 'react-native';
+import React, { useState, useContext } from 'react'
+import { GlobalContext } from '../context/GlobalContext'
+import { createStackNavigator } from '@react-navigation/stack'
+import { StyleSheet, View, Image, Text } from 'react-native'
+import { Ionicons } from '@expo/vector-icons'
 
 export default function Profile() {
-	const Stack = createStackNavigator();
+	const Stack = createStackNavigator()
 	return (
 		<Stack.Navigator>
 			<Stack.Screen name="Profile" component={ProfileContent} />
 		</Stack.Navigator>
-	);
+	)
 }
 
 const ProfileContent = ({ navigation }) => {
-	//const { decks, createDeck } = useContext(GlobalContext);
-	//const [newDeckText, setNewDeckText] = useState('');
-
-	/*const submitDeck = () => {
-		if (newDeckText == '') {
-			alert('Please enter a valid deck name!');
-			return;
-		} else if (newDeckText in decks) {
-			alert(
-				'A deck with that name already exists, please choose another deck name.'
-			);
-			return;
-		}
-
-		createDeck(newDeckText);
-		setNewDeckText('');
-		navigation.navigate('Deck Detail', { deckName: newDeckText });
-	};*/
+	// Dummy profile data
+	const name = 'Ashley'
+	const profilePicture = 'https://i.imgur.com/M4egXhD.jpg'
+	const rating = 4.9
+	const carPhoto = 'https://i.imgur.com/8Zz4N15.jpg'
 
 	return (
-		<></>
-	);
-};
+		<View style={styles.container}>
+			<Image style={styles.profilePicture} source={{ uri: profilePicture }} />
+			<Text style={styles.name}>{name}</Text>
+			<Text style={styles.rating}>
+				{rating} <Ionicons name={'ios-star'} size={20} />
+			</Text>
+			<Text style={styles.myCarText}>My Car</Text>
+			<Image style={styles.myCar} source={{ uri: carPhoto }} />
+		</View>
+	)
+}
 
 const styles = StyleSheet.create({
 	container: {
-		flex: 1,
+		padding: 25,
+		display: 'flex',
 		flexDirection: 'column',
-		padding: 50,
-		justifyContent: 'center',
-		alignItems: 'stretch',
+		alignItems: 'center',
 	},
-	input: {
-		borderWidth: 1,
-		borderRadius: 5,
-		borderColor: '#aaaaaa',
-		backgroundColor: 'white',
-		padding: 10,
-		marginBottom: 10,
-		fontSize: 25,
-		textAlign: 'center',
+	profilePicture: {
+		borderRadius: 9999,
+		width: 200,
+		height: 200,
+		borderColor: 'white',
+		borderWidth: 5,
 	},
-	button: {
-		borderRadius: 5,
-		backgroundColor: '#4257b2',
-		padding: 15,
+	name: {
+		fontSize: 30,
+		marginTop: 10,
 	},
-	buttonText: {
-		color: 'white',
+	rating: {
 		fontSize: 20,
-		textAlign: 'center',
+		color: 'darkgoldenrod',
 	},
-});
+	myCarText: {
+		marginTop: 40,
+		marginBottom: 10,
+		fontSize: 20,
+	},
+	myCar: {
+		width: 300,
+		height: 300,
+		borderRadius: 15,
+	},
+})
