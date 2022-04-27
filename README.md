@@ -24,7 +24,7 @@ The app was created in React native and is available cross-platform. The prototy
 This is just a barebones layout of what the backend API will look like, with all the routes planned out. The Node.js/express routes exist and are functional, but the actual routes are just pseudo-code at the moment.
 
 ## Matching Algorithm
-Our algorithm is used to recommend cars to users. When we have a larger dataset, we will be able to use an ML model. For now, we used a variation of the Game and Shapely algorithm, used by Airbnb, to achieve a Pareto efficient matching. We took dates and airport as a requirement and then according to the preferred car type, created a list of preferences for each user.
+Our algorithm is used to recommend cars to users. When we have a larger dataset, we will be able to use an ML model. For now, we used a variation of the Gale and Shapley algorithm, used by Airbnb, to achieve a Pareto efficient matching. We took dates and airport as a requirement and then according to the preferred car type, created a list of preferences for each user.
 
 ## Test Data
 We will be using this test data to create our database schemas, and we have based our matching algorithm, backend, and frontend data inputs off of this test data.
